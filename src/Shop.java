@@ -35,16 +35,17 @@ public class Shop {
 
 //		User Input for Shop name:;
 		System.out.println("What is Shop Name?");
-		String iId = sc.next();
-		Sp.setShopName(iId);
+		String SN = sc.next();
+		Sp.setShopName(SN);
+		newShopName.add(Sp);
 
 		List<Shop> newShopLoc = new ArrayList<Shop>();
 
-//		User Input for Shop name:;
+//		User Input for Shop Location:;
 		System.out.println("Where does Shop Located?");
-		String iId1 = sc.next();
-		Sp.setShopLocation(iId1);
-		newShopName.add(Sp);
+		String SL = sc.next();
+		Sp.setShopLocation(SL);
+		newShopLoc.add(Sp);
 
 	}
 }

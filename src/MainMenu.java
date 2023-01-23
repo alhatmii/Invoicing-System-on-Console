@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Date;
 
 public class MainMenu {
 
@@ -53,15 +54,35 @@ public class MainMenu {
 						Item itm = new Item();
 						System.out.println("These are all Items available in the store:");
 						itm.loadItems();
-					} 
+					}
 
 					else if (InnerChoice1 == 2) {
+//						Initiating an object to recall the Method from class Shop:
 						Shop shop = new Shop();
 						shop.addingShop();
-						
+
 					}
 
 					else if (InnerChoice1 == 3) {
+						int counter = 0;
+
+//						To repeat the Invoice multiple times with counter:
+
+						System.out.println("--------------------------------------------------");
+						System.out.println("Invoice Number: [0" + counter + "]");
+						System.out.println("Issued on: (date)");
+						System.out.println("Invoice NO: 000" + counter + 2 + counter + 5 + counter + 1);
+						System.out.println(
+								"First Name of Customer " + "Middle NAme of customer " + "Last Name of customer");
+						System.out.println("Phone Number: " + " Add phone Number");
+						System.out.println("Number of Items Purchased: ");
+						System.out.println("Total Amount: " + "Amount in" + " OMR");
+						System.out.println("Total Amount Paid: " + "Amount in" + " OMR");
+						System.out.println("Remaining Amount: " + "Amount" + " OMR");
+						System.out.println("--------------------------------------------------");
+						System.out.println("\n");
+
+						counter++;
 
 					}
 
