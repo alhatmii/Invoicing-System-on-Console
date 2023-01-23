@@ -44,10 +44,14 @@ public class MainMenu {
 					int InnerChoice1 = sc.nextInt();
 
 					if (InnerChoice1 == 1) {
-
+//						Initiating an object to recall the Method from class Invoice:
 						Invoice inv = new Invoice();
-						Item itm = new Item();
+						System.out.println("These are all Invoices loaded from the system:");
 						inv.invoicePaper();
+
+//						Initiating an object to recall the Method from class Item:
+						Item itm = new Item();
+						System.out.println("These are all Items available in the store:");
 						itm.loadItems();
 					}
 
