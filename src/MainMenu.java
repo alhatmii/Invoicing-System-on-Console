@@ -53,10 +53,12 @@ public class MainMenu {
 						Item itm = new Item();
 						System.out.println("These are all Items available in the store:");
 						itm.loadItems();
-					}
+					} 
 
 					else if (InnerChoice1 == 2) {
-
+						Shop shop = new Shop();
+						shop.addingShop();
+						
 					}
 
 					else if (InnerChoice1 == 3) {
