@@ -39,13 +39,16 @@ public class MainMenu {
 					System.out.println("2. Set Shop Name (data should be saved)");
 					System.out.println("3. Set Invoice Header (Tel / Fax / Email / Website) (Data should be saved)");
 					System.out.println("4. Go Back");
+					System.out.print("Enter your choice: ");
 
 					int InnerChoice1 = sc.nextInt();
 
 					if (InnerChoice1 == 1) {
 
 						Invoice inv = new Invoice();
+						Item itm = new Item();
 						inv.invoicePaper();
+						itm.loadItems();
 					}
 
 					else if (InnerChoice1 == 2) {
@@ -70,6 +73,7 @@ public class MainMenu {
 					System.out.println("3. Change Item Price");
 					System.out.println("4. Report All Items");
 					System.out.println("5. Go Back");
+					System.out.print("Enter your choice: ");
 
 					int InnerChoice2 = sc.nextInt();
 
@@ -111,6 +115,8 @@ public class MainMenu {
 				boolean c = true;
 				while (c) {
 					System.out.println("Are you sure you want to exit? (yes/no)");
+					System.out.print("Enter your choice: ");
+
 					String exitMenu = sc.next();
 
 					if (exitMenu.equalsIgnoreCase("yes")) {

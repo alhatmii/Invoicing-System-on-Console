@@ -95,10 +95,63 @@ public class Invoice {
 	}
 
 	void invoicePaper() {
+
+//		Array of customer first Names:
+		String[] FirstName = new String[10];
+		FirstName[0] = "Mohammed";
+		FirstName[1] = "Ali";
+		FirstName[2] = "Cart";
+		FirstName[3] = "Dart";
+		FirstName[4] = "Electronics";
+		FirstName[5] = "Food";
+		FirstName[6] = "Golf";
+		FirstName[7] = "Horse";
+		FirstName[8] = "Dates";
+		FirstName[9] = "Rocks";
+
+//		Array of Items ID:
+		String[] ItemId = new String[10];
+		ItemId[0] = "A0235";
+		ItemId[1] = "B9575";
+		ItemId[2] = "C9523";
+		ItemId[3] = "D4482";
+		ItemId[4] = "E3256";
+		ItemId[5] = "F0125";
+		ItemId[6] = "G9856";
+		ItemId[7] = "H9342";
+		ItemId[8] = "D0321";
+		ItemId[9] = "R3597";
+
+//		Array of Items ID:
+		Double[] unitPrice = new Double[10];
+		unitPrice[0] = 3.500;
+		unitPrice[1] = 6.500;
+		unitPrice[2] = 9.400;
+		unitPrice[3] = 200.100;
+		unitPrice[4] = 65.300;
+		unitPrice[5] = 6.500;
+		unitPrice[6] = 69.300;
+		unitPrice[7] = 3000.200;
+		unitPrice[8] = 362.200;
+		unitPrice[9] = 21.200;
+
+//		Array of Items ID:
+		int[] quantity = new int[10];
+		quantity[0] = 6325;
+		quantity[1] = 3325;
+		quantity[2] = 5254;
+		quantity[3] = 321;
+		quantity[4] = 6945;
+		quantity[5] = 1250;
+		quantity[6] = 1234;
+		quantity[7] = 8675;
+		quantity[8] = 465;
+		quantity[9] = 7554;
+
 		System.out.println("\n");
 
 //		To repeat the Invoice multiple times with counter:
-		for (int i = 0; i < 10; i++) {
+		for (int i = 1; i <= 11; i++) {
 			System.out.println(date);
 			System.out.println("Invoice NO: AB000" + counter);
 			System.out.println(getFirstName() + " " + getMiddleName() + " " + getLastName());
