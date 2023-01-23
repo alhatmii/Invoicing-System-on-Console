@@ -44,6 +44,8 @@ public class MainMenu {
 
 					if (InnerChoice1 == 1) {
 
+						Invoice inv = new Invoice();
+						inv.invoicePaper();
 					}
 
 					else if (InnerChoice1 == 2) {

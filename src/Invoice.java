@@ -1,3 +1,4 @@
+import java.util.Date;
 
 public class Invoice {
 
@@ -11,6 +12,16 @@ public class Invoice {
 	private double paidAmount;
 	private double balance;
 
+//	Counter for Invoice Numbers:
+	int counter = 0;
+
+//	To Initiate Date in the code:
+	Date date = new Date();
+
+//	Initiating an object to object chaining:
+	Item item = new Item();
+
+//	Getter and Setters for properties:
 	public String getFirstName() {
 		return firstName;
 	}
@@ -83,8 +94,18 @@ public class Invoice {
 		this.balance = balance;
 	}
 
-	void fullName() {
-		String fullName = null;
-		System.out.println(fullName = getFirstName() + " " + getMiddleName() + " " + getLastName());
+	void invoicePaper() {
+		System.out.println("\n");
+
+//		To repeat the Invoice multiple times with counter:
+		for (int i = 0; i < 10; i++) {
+			System.out.println(date);
+			System.out.println("Invoice NO: AB000" + counter);
+			System.out.println(getFirstName() + " " + getMiddleName() + " " + getLastName());
+			System.out.println("Phone Number: " + getPhoneNumber());
+			System.out.println("\n");
+
+			counter++;
+		}
 	}
 }
