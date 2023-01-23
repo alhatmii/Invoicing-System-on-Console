@@ -7,12 +7,13 @@ public class MainMenu {
 		System.out.println("Application Main Menu: \r");
 		System.out.println("1. Shop Settings");
 		System.out.println("2. Manage Shop Items");
-		System.out.println("3. Create New Invoice");
-		System.out.println("4. Report: Statistics");
-		System.out.println("5. Report: All Invoices");
-		System.out.println("6. Search (1) Invoice");
-		System.out.println("7. Program Statistics");
-		System.out.println("8. Exit \r");
+		System.out.println("3. Create New Invoice (Invoices should be save/serialized)");
+		System.out.println("4. Report: Statistics (No Of Items, No of Invoices, Total Sales)");
+		System.out.println(
+				"5. Report: All Invoices ( Invoice No, Invoice Date, Customer Name, No of items, Total, Balance)");
+		System.out.println("6. Search (1) Invoice (Search by Invoice No and Report All Invoice details with items)");
+		System.out.println("7. Program Statistics (Print each Main Menu Item with how many number selected).");
+		System.out.println("8. Exit. \r");
 		System.out.print("Enter your choice: ");
 	}
 
@@ -32,8 +33,8 @@ public class MainMenu {
 
 			switch (choice) {
 			case 1:
-				boolean i = true;
-				while (i) {
+				boolean a = true;
+				while (a) {
 					System.out.println("1. Load Data (Items and invoices)");
 					System.out.println("2. Set Shop Name (data should be saved)");
 					System.out.println("3. Set Invoice Header (Tel / Fax / Email / Website) (Data should be saved)");
@@ -55,13 +56,13 @@ public class MainMenu {
 
 //					Exiting the menu:
 					else if (InnerChoice1 == 4) {
-						i = false;
+						a = false;
 					}
 				}
 				break;
 			case 2:
-				boolean k = true;
-				while (k) {
+				boolean b = true;
+				while (b) {
 					System.out.println("1. Add Items (Item should be saved/serialized)");
 					System.out.println("2. Delete Items");
 					System.out.println("3. Change Item Price");
@@ -88,7 +89,7 @@ public class MainMenu {
 
 //					Exiting the menu:
 					else if (InnerChoice2 == 5) {
-						i = false;
+						b = false;
 					}
 
 				}
@@ -104,6 +105,27 @@ public class MainMenu {
 			case 7:
 				break;
 			case 8:
+
+				boolean c = true;
+				while (c) {
+					System.out.println("Are you sure you want to exit? (yes/no)");
+					String exitMenu = sc.next();
+
+					if (exitMenu.equalsIgnoreCase("yes")) {
+
+						System.out.println("Have a Good Day!");
+						c = true;
+
+//						To Exit the System:
+						System.exit(0);
+					}
+
+					else if (exitMenu.equalsIgnoreCase("no")) {
+						System.out.println("-------------------------------------------- \r");
+						c = false;
+					}
+				}
+
 				break;
 			default:
 				System.out.println("Invalid choice. Please try again.");
