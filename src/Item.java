@@ -9,6 +9,7 @@ public class Item {
 //	Counter for Invoice Numbers:
 	int counter = 0;
 
+//	Getter and Setters for properties:
 	public String getItemId() {
 		return itemId;
 	}
