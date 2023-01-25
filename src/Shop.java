@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Shop {
@@ -30,22 +28,6 @@ public class Shop {
 	}
 
 	void addingShop() {
-		Shop Sp = new Shop();
-		List<Shop> newShopName = new ArrayList<Shop>();
-
-//		User Input for Shop name:;
-		System.out.println("What is Shop Name?");
-		String SN = sc.next();
-		Sp.setShopName(SN);
-		newShopName.add(Sp);
-
-		List<Shop> newShopLoc = new ArrayList<Shop>();
-
-//		User Input for Shop Location:;
-		System.out.println("Where does Shop Located?");
-		String SL = sc.next();
-		Sp.setShopLocation(SL);
-		newShopLoc.add(Sp);
 
 	}
 }
