@@ -35,9 +35,9 @@ public class MainMenu {
 			case 1:
 				boolean a = true;
 				while (a) {
-					System.out.println("1. Load Data (Items and invoices)");
-					System.out.println("2. Set Shop Name (data should be saved)");
-					System.out.println("3. Set Invoice Header (Tel / Fax / Email / Website) (Data should be saved)");
+					System.out.println("1. Load Existing Invoices & Items.");
+					System.out.println("2. Set New Shop Name.");
+					System.out.println("3. Set Invoice Header. ");
 					System.out.println("4. Go Back");
 					System.out.print("Enter your choice: ");
 
@@ -63,10 +63,11 @@ public class MainMenu {
 					}
 
 					else if (InnerChoice1 == 3) {
-						int counter = 0;
 						headerInvice HI = new headerInvice();
+						Shop shop = new Shop();
 
 						HI.Header();
+						shop.addingShop();
 
 					}
 
@@ -89,7 +90,8 @@ public class MainMenu {
 					int InnerChoice2 = sc.nextInt();
 
 					if (InnerChoice2 == 1) {
-
+						Item ITM = new Item();
+						ITM.AddItems();
 					}
 
 					else if (InnerChoice2 == 2) {

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Item {
 	private String itemId;
@@ -5,6 +8,9 @@ public class Item {
 	private String unitPrice;
 	private int quantity;
 	private double qtyPrice;
+
+//	Initiating Scanner:
+	Scanner sc = new Scanner(System.in);
 
 //	Counter for Invoice Numbers:
 	int counter = 0;
@@ -117,6 +123,67 @@ public class Item {
 			System.out.println("\r");
 
 			counter++;
+		}
+	}
+
+	void AddItems() {
+
+//		Adding Arrays to save the New added items:
+		List<Item> newItem = new ArrayList<Item>();
+		List<Item> newItemId = new ArrayList<Item>();
+		List<Item> newItemUnitPrice = new ArrayList<Item>();
+		List<Item> newItemQuantity = new ArrayList<Item>();
+
+		headerInvice HDI = new headerInvice();
+		Item ITM = new Item();
+
+		boolean D = true;
+		while (D) {
+
+//				User Input for Item name:
+			System.out.println("Item Name:");
+			String itemName = sc.next();
+			setItemName(itemName);
+			newItem.add(ITM);
+
+//				User Input for Item ID:
+			System.out.println("Item ID:");
+			String itemId = sc.next();
+			setItemId(itemId);
+			newItem.add(ITM);
+
+//				User Input for Item Unit Price:
+			System.out.println("Unit Price:");
+			String itemUnitPrice = sc.next();
+			setUnitPrice(itemUnitPrice);
+			newItem.add(ITM);
+
+//				User Input for Item Unit Price:
+			System.out.println("Quantity:");
+			int itemQuantity = sc.nextInt();
+			setQuantity(itemQuantity);
+			newItem.add(ITM);
+
+//				Adding new Student:
+			System.out.println("------------------------------------");
+			System.out.println("Do you wish to add new Item?");
+			System.out.println("(Answer with yes or no)");
+			String AnsS = sc.next();
+			System.out.println("------------------------------------");
+
+			if (AnsS.equalsIgnoreCase("yes")) {
+				D = true;
+			}
+
+			else if (AnsS.equalsIgnoreCase("no")) {
+				System.out.println("Thanks for adding new item details.");
+				System.out.println("--------------------------------------------");
+				System.out.println("\n");
+
+				D = false;
+				break;
+			}
+			D = false;
 		}
 	}
 }

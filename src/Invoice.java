@@ -213,4 +213,8 @@ public class Invoice {
 			counter++;
 		}
 	}
+
+	void createInvoice() {
+
+	}
 }
