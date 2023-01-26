@@ -3,7 +3,6 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class MainMenu {
 
@@ -25,6 +24,8 @@ public class MainMenu {
 //	The method of implementing the menu in static void:
 	public static void main(String[] args) {
 
+		Date date = new Date();
+
 		List<Shop> newShopName = new ArrayList<Shop>();
 		List<headerInvice> newHeaderShop = new ArrayList<headerInvice>();
 		List<Item> newItem = new ArrayList<Item>();
@@ -37,6 +38,7 @@ public class MainMenu {
 
 //			To begin the menu by selecting number:
 			int choice = sc.nextInt();
+			Item ITM = new Item();
 
 			sc.nextLine();
 
@@ -222,7 +224,6 @@ public class MainMenu {
 						}
 
 						System.out.println("\n");
-						Date date = new Date();
 //						To repeat the Invoice multiple times with counter:
 						for (int i = 0; i < 10; i++) {
 							System.out.println("--------------------------------------------------");
@@ -313,47 +314,52 @@ public class MainMenu {
 					System.out.print("Enter your choice: ");
 					System.out.println("\n");
 
-					Item ITM = new Item();
+//					Item ITM = new Item();
 
 					int InnerChoice2 = sc.nextInt();
 
 					if (InnerChoice2 == 1) {
 
-						Item ITM1 = new Item();
+						boolean D = true;
+						while (D) {
 
 //						User Input for Item name:
-						System.out.println("Item Name:");
-						String itemName = sc.next();
-						ITM1.setItemName(itemName);
+							System.out.println("Item Name:");
+							String itemName = sc.next();
+							ITM.setItemName(itemName);
 
 //						User Input for Item ID:
-						System.out.println("Item ID:");
-						String itemId = sc.next();
-						ITM1.setItemId(itemId);
+							System.out.println("Item ID:");
+							String itemId = sc.next();
+							ITM.setItemId(itemId);
 
 //						User Input for Item Unit Price:
-						System.out.println("Unit Price:");
-						String itemUnitPrice = sc.next();
-						ITM1.setUnitPrice(itemUnitPrice);
+							System.out.println("Unit Price:");
+							double itemUnitPrice = sc.nextDouble();
+							ITM.setUnitPrice(itemUnitPrice);
 
 //						User Input for Item Unit Price:
-						System.out.println("Quantity:");
-						int itemQuantity = sc.nextInt();
-						ITM1.setQuantity(itemQuantity);
+							System.out.println("Quantity:");
+							int itemQuantity = sc.nextInt();
+							ITM.setQuantity(itemQuantity);
 
 //						Adding new Student:
-						newItem.add(ITM1);
-						System.out.println("------------------------------------");
-						System.out.println("Do you wish to add new Item?");
-						System.out.println("(Answer with yes or no)");
-						String AnsS = sc.next();
-						System.out.println("------------------------------------");
+							newItem.add(ITM);
+							System.out.println("------------------------------------");
+							System.out.println("Do you wish to add new Item?");
+							System.out.println("(Answer with yes or no)");
+							String AnsS = sc.next();
+							System.out.println("------------------------------------");
 
-						if (AnsS.equalsIgnoreCase("yes")) {
-						} else if (AnsS.equalsIgnoreCase("no")) {
-							System.out.println("Thanks for adding new item details.");
-							System.out.println("---------------------------------");
-							System.out.println("\n");
+							if (AnsS.equalsIgnoreCase("yes")) {
+								D = true;
+
+							} else if (AnsS.equalsIgnoreCase("no")) {
+								System.out.println("Thanks for adding new item details.");
+								System.out.println("---------------------------------");
+								System.out.println("\n");
+								D = false;
+							}
 						}
 					}
 
@@ -399,21 +405,94 @@ public class MainMenu {
 					}
 
 					else if (InnerChoice2 == 3) {
+						System.out.println("Enter item ID: ");
+						String idOfItem = sc.next();
 
+						for (int i = 0; i < newItem.size(); i++) {
+							if (newItem.get(i).getItemId().equalsIgnoreCase(idOfItem)) {
+
+								System.out.println("Item Found Enter New Price: ");
+								double priceOfItem = sc.nextDouble();
+
+								newItem.get(i).setUnitPrice(priceOfItem);
+								System.out.println("New Item Price Saved");
+							}
+						}
 					}
 
 					else if (InnerChoice2 == 4) {
 
+						System.out.println("\r\n");
+						System.out.println(" The Item list is consist of: ");
+						for (Item name : newItem) {
+							System.out.println("---------------------------------");
+							System.out.println("Name of Item: " + name.getItemName());
+							System.out.println("Id of Item: " + name.getItemId());
+							System.out.println("Unit Price is: " + name.getUnitPrice());
+							System.out.println("The total number in stock is: " + name.getQuantity());
+							System.out.println("---------------------------------");
+						}
+						System.out.println("---------------------------------");
+						System.out.println("---------------------------------");
 					}
 
 //					Exiting the menu:
 					else if (InnerChoice2 == 5) {
 						b = false;
 					}
-
 				}
 				break;
 			case 3:
+				Item ITM1 = new Item();
+
+//				User Input for Item name:
+				System.out.println("Item Name:");
+				String itemName = sc.next();
+				ITM1.setItemName(itemName);
+
+//				User Input for Item ID:
+				System.out.println("Item ID:");
+				String itemId = sc.next();
+				ITM1.setItemId(itemId);
+
+//				User Input for Item Unit Price:
+				System.out.println("Unit Price:");
+				double itemUnitPrice = sc.nextDouble();
+				ITM1.setUnitPrice(itemUnitPrice);
+
+//				User Input for Item Unit Price:
+				System.out.println("Quantity:");
+				int itemQuantity = sc.nextInt();
+				ITM1.setQuantity(itemQuantity);
+
+				System.out.println("INVOICE");
+				System.out.println();
+				int counter = 0;
+				System.out.println("Invoice Number: [0" + counter + "]");
+				System.out.println("Invoice Date: " + date);
+				System.out.println();
+				System.out.println("Billed To:  												Shipping To:");
+				System.out.println("John Doe													Jane Doe");
+				System.out.println("123 Main St  												456 Park Ave");
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println();
+				System.out.println("Anytown, USA 12345");
+				System.out.println();
+				System.out.println("Item                                Quantity       Unit Price       Total Price");
+				System.out.println("--------------------------------------------------------------------------------");
+				System.out.println("Product A                       1                 $10.00            $10.00");
+				System.out.println("Product B                       2                 $20.00            $40.00");
+				System.out.println("Product C                       3                 $30.00            $90.00");
+				System.out.println();
+				System.out.println("Subtotal:                                                      $140.00");
+				System.out.println("Shipping:                                                       $15.00");
+				System.out.println("Tax:                                                            $14.00");
+				System.out.println("Total:                                                         $169.00");
+				System.out.println();
+				System.out.println("Thank you for your business!");
+
 				break;
 			case 4:
 				break;

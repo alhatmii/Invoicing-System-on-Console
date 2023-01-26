@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Item {
 	private String itemId;
 	private String itemName;
-	private String unitPrice;
+	private double unitPrice;
 	private int quantity;
 	private double qtyPrice;
 
@@ -32,12 +32,12 @@ public class Item {
 		this.itemName = itemName;
 	}
 
-	public String getUnitPrice() {
+	public double getUnitPrice() {
 		return unitPrice;
 	}
 
-	public void setUnitPrice(String unitPrice) {
-		this.unitPrice = unitPrice;
+	public void setUnitPrice(double priceOfItem) {
+		this.unitPrice = priceOfItem;
 	}
 
 	public int getQuantity() {
